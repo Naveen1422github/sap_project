@@ -1,0 +1,52 @@
+<mvc:View
+    controllerName="app.config.controller.createField"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>
+    <OverflowToolbar id="_IDGenOverflowToolbar9" height="50px">
+        <Title
+            id="pageHeader"
+            text="Form Field Definition"
+            textAlign="Center">
+        </Title>
+        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+        <Button id="createFieldBtn" text="Create" width="100px" press="onCreateField" type="Emphasized" visible="true"/>
+    </OverflowToolbar>
+    <Page id="page" showHeader="false">
+        <content>
+            <Table items="{/fieldTable}" id="fieldTable" selectionChange="onSelect" mode="None">
+                <columns>
+                    <Column id="_IDGenColu" width="4rem">
+                        <header>
+                            <Label id="_IDGenLl12" wrapping="true" text="ID" />
+                        </header>
+                    </Column>
+                    <Column id="_colLevel" width="6rem">
+                        <header>
+                            <Label id="_IDLevel" wrapping="true" text="Field Name" />
+                        </header>
+                    </Column>
+                    <Column id="_IDGenColumn2" width="6rem">
+                        <header>
+                            <Label id="_IDGenLabel7" wrapping="true" text="Field Description" />
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="item0">
+                        <cells>
+                            <Text id="id1" text="{id}" />
+                            <Text id="id2" text="{fieldName}" />
+                            <Text id="id3" text="{fieldDesc}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+
+</mvc:View>

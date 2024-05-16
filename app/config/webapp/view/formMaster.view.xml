@@ -1,0 +1,56 @@
+<mvc:View
+	controllerName="app.config.controller.formMaster"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+
+<OverflowToolbar id="_IDGenOverflowToolbar1" height="50px">
+    <Title 
+	  id="pageHeader"
+	  text="Form Master Defination"
+	  textAlign="Center"
+	></Title>
+	<ToolbarSpacer id="_IDGenToolbarSpacer1" />
+	<Button id="_IDGenButton1" text="Create" width="100px" press="onCreateForm"></Button>
+</OverflowToolbar>
+
+<Page id="_IDGenPage1" showHeader="false">
+    <content>
+        <Table id="formTable" items="{path: '/formMaster',parameters: {$count: true,$$updateGroupId : 'peopleGroup'}}" selectionChange="onSelect" mode="None" >
+		   <columns>
+	         <Column id="_IDGenColu" width="4rem">
+                <header>
+                    <Label id="_IDGenLl12" wrapping="true" text="ID" />
+                </header>
+            </Column>
+            <Column id="_colLevel" width="6rem">
+                <header>
+                    <Label id="_IDLevel" wrapping="true" text="Form Name" />
+                </header>
+            </Column>
+            <Column id="_IDGenColumn2" width="6rem">
+                <header>
+                    <Label id="_IDGenLabel7" wrapping="true" text="Form Description" />
+                </header>
+             </Column>
+            </columns>
+			<items>
+			   <ColumnListItem id="_IDGenColumnListItem1" type="Active" press="onselectForm">
+			       <cells>
+                        <Text id="id1" text="{id}" />
+                        <Text id="id2" text="{formName}" />
+                        <Text id="id3" text="{formDesc}" />
+				   </cells> 
+			   </ColumnListItem>
+			
+			</items>
+		</Table>	
+	</content>
+</Page>
+
+
+</mvc:View>

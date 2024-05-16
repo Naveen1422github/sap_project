@@ -1,0 +1,76 @@
+<mvc:View controllerName="app.config.controller.formField"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+    <OverflowToolbar id="_IDGenOverflowToolbar9" height="50px">
+        <Title
+            id="pageHeader"
+            text="Form Fields"
+            textAlign="Center">
+        </Title>
+    </OverflowToolbar>
+    <OverflowToolbar>
+        <content>
+            <Title text="{formFieldModel>/formName} [{formFieldModel>/formDesc}]"/>
+            <ToolbarSpacer />
+        </content>
+    </OverflowToolbar>
+    <Page id="page" showHeader="false">
+        <content>
+            <Table items="{/formFieldTable}" id="formFieldTable" selectionChange="onSelect" mode="None">
+               
+                <columns>
+                    <Column id="selectLabelCol" width="6rem">
+                        <header>
+                            <Label id="selectLabel" text="Select"/>
+                        </header>
+                    </Column>
+                    <Column id="colID" width="7rem">
+                        <header>
+                            <Label id="labelID" wrapping="true" text="ID" />
+                        </header>
+                    </Column>
+ 
+                    <Column id="_IDGenColumn2" width="7rem">
+                        <header>
+                            <Label id="_IDGenLabel7" wrapping="true" text="Form Type" />
+                        </header>
+                    </Column>
+ 
+                    <Column id="_IDGenColumn3" width="7rem">
+                        <header>
+                            <Label id="_IDGenLabel8" wrapping="true" text="Form Description" />
+                        </header>
+                    </Column>
+                   
+                    <Column id="_IDGenColumn4" width="7rem">
+                        <header>
+                            <Label id="_IDGenLabel9" wrapping="true" text="Parameter Name" />
+                        </header>
+                    </Column>
+
+                    <Column id="_IDGenColumn5" width="7rem">
+                        <header>
+                            <Label id="_IDGenLabel10" wrapping="true" text="Parameter Description" />
+                        </header>
+                    </Column>
+
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="item0">
+                        <cells>
+                            <CheckBox id="checkedField" selected="{checkedField}" />
+                            <Text id="id1" text="{id}" />
+                            <Text id="id2" text="{formType}" />
+                            <Text id="id3" text="{formDesc}" />
+                            <Text id="id4" text="{paraName}" />
+                            <Text id="id5" text="{paraDesc}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+ 
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
+ 

@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="app.config.controller.home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>
+
+
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+        header="Form Field Defination"  
+        press="onCreateField" >
+		<TileContent>
+            <ImageContent src="sap-icon://create-form"></ImageContent>
+		</TileContent>
+	</GenericTile>
+
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+        header="Form Profile Defination"
+        press="onCreateForm" >
+		<TileContent>
+            <ImageContent src="sap-icon://person-placeholder"></ImageContent>
+		</TileContent>
+	</GenericTile>
+
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+        header="Raised Request"
+		subheader="Action" press="press">
+        <TileContent id="_IDGenTileContent1" >
+            <ImageContent id="_IDGenImageContent1" src="sap-icon://request" />
+        </TileContent>
+	</GenericTile>
+
+
+</mvc:View>

@@ -1,0 +1,10 @@
+[4:44 PM] Ashwin Patel (Unverified)
+<mvc:View
+    controllerName="app.user.controller.displayRequest"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>

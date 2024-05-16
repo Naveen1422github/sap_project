@@ -1,0 +1,25 @@
+<mvc:View controllerName="app.user.controller.home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form">
+
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+        header="Create Request"  
+        press="oncreateRequest">
+
+		<TileContent>
+			<ImageContent src="sap-icon://create" />
+		</TileContent>
+	</GenericTile>
+
+
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+        header="Display Request"
+        press="ondisplayRequest" >
+        
+		<TileContent  >
+			<ImageContent src="sap-icon://checklist" />
+		</TileContent>
+	</GenericTile>
+
+</mvc:View>

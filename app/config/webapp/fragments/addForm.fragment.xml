@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Dialog id="createDialogform" title="Create Form" class="sapUiSmallMargin">
+        <VBox class="sapUiContentPadding sapUiSmallMargin">
+            <Label id="_IDGenLabel117" text="Form Type :" />
+            <Input id="newFieldNameInputform" value="{addFormModel>/formName}" placeholder="Enter Form name" />
+            <Label id="_IDGenLabel182form" text="Form Description :" />
+            <Input id="newFieldNameInputdescform" value="{addFormModel>/formDesc}" placeholder="Enter Form name description" />
+        </VBox>
+        <footer>
+            <OverflowToolbar id="otbFooterr">    
+                <ToolbarSpacer/>        
+                <Button type="Accept" width="70px" text="Save" press="onsaveNewForm">
+                </Button>
+                <Button type="Reject" width="70px" text="Cancel" press="oncancelNewForm">
+                </Button>
+            </OverflowToolbar>
+        </footer>
+    </Dialog>
+</core:FragmentDefinition>  
