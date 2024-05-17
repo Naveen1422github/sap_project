@@ -2,35 +2,67 @@
     controllerName="app.user.controller.createRequest"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:c="sap.ui.core"
+    xmlns:core="sap.ui.core"
     displayBlock="true"
     height="100%"
     busyIndicatorDelay="0"
-
+>
     <OverflowToolbar id="_IDGenOverflowToolbar1" height="50px">
-    <Title 
-	  id="pageHeader"
-	  text="Create Request"
-	  textAlign="Center"
-	></Title>
-	<ToolbarSpacer id="_IDGenToolbarSpacer1" />
-	<Button id="_IDGenButton1" text="Create" width="100px" press="onCreateRequest"></Button>
-</OverflowToolbar>
-
-<VBox id="_IDGenVBox" class="sapUiTinyMarginTop">
+        <Title
+            id="pageHeader"
+            text="Create Request"
+            textAlign="Center"
+        />
+        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+    </OverflowToolbar>
+ 
+    <VBox id="_IDGenVBox" class="sapUiTinyMarginTop">
         <HBox id="_IDGenHBox1" class="formType">
             <Label id="_IDGenL" class="formTypeLabel" text="Form Type:" design="Bold"/>
-            <ComboBox selectionChange="onValueHelpClose1" width="200px" items="{formTpyes>/}" selectedKey="{}" id="selectedDocumentType" change="">
-                <core:Item key="{formTypes>}" text="{formTypes>}"/>
+            <ComboBox
+                width="200px"
+                items="{path: 'formTypes>/items'}"
+                selectedKey="{formTypes>/selectedKey}"
+                selectionChange=".onSelectFormType"
+                id="selectedFormType"
+            >
+                <core:Item key="{formTypes>key}" text="{formTypes>text}" />
             </ComboBox>
         </HBox>
-</VBox>
-
-<Page id="_IDGenPage1" showHeader="false">
-    <content>
-      <Table id="createRequest">
-      
-      </Table>
-	</content>
-</Page>
-
+    </VBox>
+ 
+    <Page id="_IDGenPage1" showHeader="false">
+        <content>
+            <Table items="{inputModel>/}" mode="None" id="valueParameterTable" class="tableBorder sapUiTinyMargin">
+                <columns>
+                    <Column width="40rem">
+                        <header>
+                            <Title id="title4" text="Fields" />
+                        </header>
+                    </Column>
+                    <Column width="50rem">
+                        <header>
+                            <Title id="title5" text="Value" />
+                        </header>
+                    </Column>
+                    <Column width="20rem">
+                        <header>
+                            <Title id="title6" />
+                        </header>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{inputModel>paraName}" />
+                            <Input width="200px" value="{inputModel>value}" required="true"/>
+                            <Text text="{inputModel>ID}" visible="false" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Button text="Submit" type="Emphasized" press="onSubmitForm" class="sapUiSmallMargin"></Button>
+        </content>
+    </Page>
+</mvc:View>
+ 

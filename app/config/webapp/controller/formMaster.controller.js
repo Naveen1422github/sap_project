@@ -18,24 +18,6 @@ sap.ui.define([
 
 		},
 
-		// onCreateForm : function () {
-
-		// 	let oView = this.getView();
-		// 	const addFormData = {
-		// 		formName: "",
-		// 		formDesc: ""
-		// 	};
-
-		// 	const addFormModel = new JSONModel(addFormData);
-		// 	oView.setModel(addFormModel, "addFormModel");
-
-		// 	if (!this._oDialogForm) {
-		// 		this._oDialogForm = sap.ui.xmlfragment("app.config.fragments.addForm", this);
-		// 		oView.addDependent(this_oDialogForm);
-		// 	}
-		// 	this_._oDialogForm.open();
-
-		// },
 
 		onCreateForm: function () {
             var oView = this.getView();

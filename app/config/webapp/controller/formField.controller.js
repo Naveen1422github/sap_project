@@ -23,6 +23,8 @@ sap.ui.define([
         },
 
         handleRouteMatched: function (oEvent) {
+
+                       
                 const form = {
                     id: oEvent.getParameter("arguments").id,
                     formName: oEvent.getParameter("arguments").formName,
@@ -31,7 +33,9 @@ sap.ui.define([
 
                 console.log("form", form)
                 const formFieldModel = new JSONModel(form);
+              
                 this.getView().setModel(formFieldModel, "formFieldModel");
+               
                 var oFilter = new Filter("formType", FilterOperator.EQ, oEvent.getParameter("arguments").formName);
                 this.getView().byId("formFieldTable").getBinding("items").filter(oFilter, FilterType.Application);
                 this.onRefreshFormField();
@@ -63,14 +67,16 @@ sap.ui.define([
 
         onRefreshFormField: function () {
             var that = this;
+            var type = that.getView().getModel("formFieldModel").getData();
  
             Promise.all([this.addExtraField(), this.fieldDataState()]).then(function () {
- 
+
                 var extraObjects = fieldModelData.filter(function (formObject) {
                     return !formFieldModelData.some(function (formFieldObject) {
-                        return formFieldObject.formType === formObject.formType;
+                        return formFieldObject.paraName === formObject.fieldName && formFieldObject.formType === type.formName;
                     });
                 });
+
  
                 console.log("Extra Objects:", extraObjects);
  
@@ -89,9 +95,18 @@ sap.ui.define([
 
                         console.log("dfs", oEntrySet)
  
+                        // var oModel = that.getView().getModel();
+                        // var oBindListNewEntitySet = oModel.bindList("/formFieldTable");
+                        // oBindListNewEntitySet.create(oEntrySet);
+
                         var oModel = that.getView().getModel();
                         var oBindListNewEntitySet = oModel.bindList("/formFieldTable");
                         oBindListNewEntitySet.create(oEntrySet);
+                        oModel.bindList(`/formFieldTable(${oEntrySet.id})`, {
+                            success: function () {
+                                console.log("Entity already exists, skipping creation.");
+                            },
+                        });
                     }
                 });
  

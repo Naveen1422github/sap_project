@@ -15,7 +15,7 @@
 	  textAlign="Center"
 	></Title>
 	<ToolbarSpacer id="_IDGenToolbarSpacer1" />
-	<Button id="_IDGenButton1" text="Create" width="100px" press="onCreateForm"></Button>
+	<Button id="_IDGenButton1" text="Create" width="100px" press="onCreateForm" type="Emphasized"></Button>
 </OverflowToolbar>
 
 <Page id="_IDGenPage1" showHeader="false">
